@@ -1,0 +1,519 @@
+{
+  "reviewedAt": "2026-09-26",
+  "capabilities": [
+    {
+      "id": "public-jailbreak",
+      "name": {
+        "en": "Public end-to-end 13.60 jailbreak",
+        "ar": "كسر حماية عام ومتكامل لإصدار 13.60"
+      },
+      "status": "unverified",
+      "summary": {
+        "en": "A working payload or firmware offset is only one component. This catalog has no verified public end-to-end release for 13.60 yet.",
+        "ar": "وجود حمولة تشغيل أو عناوين لهذا الإصدار يمثل جزءاً واحداً فقط. لا يحتوي هذا الفهرس حتى الآن على إصدار عام موثّق لسلسلة كسر حماية مكتملة لإصدار 13.60."
+      },
+      "sourceUrl": "https://github.com/ps5-payload-dev/sdk",
+      "reviewedAt": "2026-09-26"
+    },
+    {
+      "id": "sdk-offsets",
+      "name": {
+        "en": "Payload SDK firmware offsets",
+        "ar": "عناوين البرنامج التطويري لهذا الإصدار"
+      },
+      "status": "confirmed",
+      "summary": {
+        "en": "The upstream PS5 payload SDK added firmware 13.60 support. This enables development; it does not provide console access by itself.",
+        "ar": "أضاف مطورو حزمة PS5 Payload SDK دعم إصدار 13.60. يفيد هذا التطوير في بناء الأدوات، لكنه لا يتيح الوصول إلى الجهاز بمفرده."
+      },
+      "sourceUrl": "https://github.com/ps5-payload-dev/sdk/commits/master/",
+      "reviewedAt": "2026-09-26",
+      "firmwareEvidence": {
+        "testedVersions": [
+          "13.60"
+        ],
+        "sourceUrl": "https://github.com/ps5-payload-dev/sdk/releases",
+        "reviewedAt": "2026-09-26"
+      }
+    },
+    {
+      "id": "kstuff-lite",
+      "name": {
+        "en": "Kstuff Lite firmware handling",
+        "ar": "معالجة الإصدار في Kstuff Lite"
+      },
+      "status": "confirmed",
+      "summary": {
+        "en": "Upstream source includes 13.60-specific patches. Running it still requires a working entry point and compatible loader.",
+        "ar": "تتضمن الشيفرة الأصلية تعديلات مخصصة لإصدار 13.60. ما زال تشغيلها يتطلب نقطة دخول ومحمّلاً متوافقين."
+      },
+      "sourceUrl": "https://github.com/EchoStretch/kstuff-lite",
+      "reviewedAt": "2026-09-26"
+    },
+    {
+      "id": "console-loader",
+      "name": {
+        "en": "Public ELF loader path on 13.60",
+        "ar": "مسار عام لمحمّل ELF على 13.60"
+      },
+      "status": "unverified",
+      "summary": {
+        "en": "A payload sender can only work after an ELF loader is already running on the console. Verify the specific entry path before trying a payload.",
+        "ar": "لا يعمل إرسال ملفات ELF إلا بعد تشغيل المحمّل على الجهاز. تحقّق من طريقة الدخول الخاصة بإصدارك قبل محاولة إرسال أي ملف."
+      },
+      "sourceUrl": "https://github.com/ps5-payload-dev/elfldr",
+      "reviewedAt": "2026-09-26"
+    },
+    {
+      "id": "game-compatibility",
+      "name": {
+        "en": "Homebrew and game compatibility",
+        "ar": "توافق التطبيقات والألعاب المنزلية"
+      },
+      "status": "experimental",
+      "summary": {
+        "en": "Publisher claims and SDK support vary by app. The game catalog does not establish whether a title can launch on a 13.60 jailbreak.",
+        "ar": "تختلف متطلبات التطبيقات بحسب ناشرها. بيانات الألعاب التجارية لا تثبت إمكانية تشغيلها على جهاز بإصدار 13.60."
+      },
+      "sourceUrl": "https://github.com/ps5-payload-dev/pacbrew-repo",
+      "reviewedAt": "2026-09-26"
+    },
+    {
+      "id": "automatic-jailbreak",
+      "name": {
+        "en": "Automatic in-app jailbreak",
+        "ar": "كسر حماية تلقائي من التطبيق"
+      },
+      "status": "unavailable",
+      "summary": {
+        "en": "The app does not automate an exploit. When a public method is verified, the guide can link to its publisher for deliberate launch.",
+        "ar": "لا يشغّل التطبيق أي استغلال تلقائياً. إذا تأكدت طريقة عامة، يمكن للدليل فتح تعليمات ناشرها بعد مراجعتها."
+      },
+      "sourceUrl": "https://github.com/ps5-payload-dev/sdk",
+      "reviewedAt": "2026-09-26"
+    }
+  ],
+  "guides": [
+    {
+      "id": "verify-firmware",
+      "title": {
+        "en": "Start with the exact system version",
+        "ar": "ابدأ بالتحقق من رقم الإصدار"
+      },
+      "summary": {
+        "en": "Record the firmware number shown in PS5 settings before following any guide or selecting a payload.",
+        "ar": "سجّل رقم نظام الجهاز الظاهر في الإعدادات قبل اتباع أي دليل أو اختيار حمولة تشغيل."
+      },
+      "steps": [
+        {
+          "en": "On the PS5, open Settings → System → System Software → Console Information.",
+          "ar": "على PS5 افتح الإعدادات ← النظام ← برمجيات النظام ← معلومات الجهاز."
+        },
+        {
+          "en": "Confirm the version is exactly 13.60. Do not infer it from the console model or purchase date.",
+          "ar": "تأكد أن الإصدار هو 13.60 بالضبط. لا تستنتجه من طراز الجهاز أو تاريخ الشراء."
+        },
+        {
+          "en": "Read the Status page for each capability and its upstream evidence.",
+          "ar": "اقرأ حالة كل قدرة في صفحة الحالة ومصدر دليلها الأصلي."
+        }
+      ],
+      "sourceUrl": "https://www.playstation.com/en-us/support/hardware/ps5/system-software/"
+    },
+    {
+      "id": "understand-chain",
+      "title": {
+        "en": "Understand the required chain",
+        "ar": "افهم سلسلة المتطلبات"
+      },
+      "summary": {
+        "en": "A browser entry, kernel access, loader, and payload support are separate capabilities.",
+        "ar": "الدخول الأولي ووصول النواة والمحمّل ودعم الحمولة قدرات منفصلة."
+      },
+      "steps": [
+        {
+          "en": "Check the publisher's supported firmware and console model.",
+          "ar": "راجع الإصدارات وطرازات الأجهزة التي يذكرها الناشر."
+        },
+        {
+          "en": "Verify that the public entry method actually starts a compatible ELF loader.",
+          "ar": "تحقّق من أن طريقة الدخول العامة تشغّل محمّل ELF متوافقاً بالفعل."
+        },
+        {
+          "en": "Only then use the Console tab to probe the loader port and send an ELF.",
+          "ar": "بعد ذلك فقط افحص منفذ المحمّل من صفحة الجهاز وأرسل ملف ELF."
+        }
+      ],
+      "sourceUrl": "https://github.com/ps5-payload-dev/elfldr"
+    },
+    {
+      "id": "homebrew",
+      "title": {
+        "en": "Choose homebrew from upstream",
+        "ar": "اختر التطبيقات من مصادرها الأصلية"
+      },
+      "summary": {
+        "en": "Browse apps and games by publisher, inspect requirements, and fetch the latest release asset.",
+        "ar": "استعرض التطبيقات والألعاب ومتطلباتها ثم نزّل ملفات الإصدار من الناشر."
+      },
+      "steps": [
+        {
+          "en": "Open an item and read the upstream README and release notes.",
+          "ar": "افتح المشروع واقرأ ملف التعليمات وملاحظات الإصدار لدى الناشر."
+        },
+        {
+          "en": "Check the latest release version and asset name before downloading.",
+          "ar": "راجع رقم الإصدار واسم الملف قبل التنزيل."
+        },
+        {
+          "en": "Use FTP or the payload sender only after the required PS5-side service is active.",
+          "ar": "استخدم FTP أو مرسل ELF فقط بعد تشغيل الخدمة المطلوبة على PS5."
+        }
+      ],
+      "sourceUrl": "https://github.com/ps5-payload-dev/pacbrew-repo"
+    }
+  ],
+  "homebrew": [
+    {
+      "id": "elfldr",
+      "name": "ELF Loader",
+      "category": {
+        "en": "Loaders",
+        "ar": "المحمّلات"
+      },
+      "description": {
+        "en": "Accepts PS5 ELF payloads over the network once started by a compatible entry method.",
+        "ar": "يستقبل ملفات ELF على PS5 عبر الشبكة بعد تشغيله بطريقة دخول متوافقة."
+      },
+      "repo": "ps5-payload-dev/elfldr",
+      "compatibility": {
+        "en": "13.60 entry method unverified",
+        "ar": "طريقة الدخول على 13.60 غير مؤكدة"
+      },
+      "requirements": {
+        "en": "A working PS5 exploit chain that can start the loader",
+        "ar": "سلسلة استغلال عاملة تستطيع تشغيل المحمّل"
+      },
+      "sourceUrl": "https://github.com/ps5-payload-dev/elfldr",
+      "reviewedAt": "2026-09-26",
+      "support": "unverified",
+      "assetPatterns": []
+    },
+    {
+      "id": "kstuff",
+      "name": "Kstuff Lite",
+      "category": {
+        "en": "Payloads",
+        "ar": "حمولات التشغيل"
+      },
+      "description": {
+        "en": "Firmware-gated kernel and package support payload from EchoStretch.",
+        "ar": "حمولة من EchoStretch لدعم النواة والحزم وفق إصدار النظام."
+      },
+      "repo": "EchoStretch/kstuff-lite",
+      "compatibility": {
+        "en": "13.60 code present; runtime requires a loader",
+        "ar": "توجد شيفرة لإصدار 13.60؛ التشغيل يتطلب محمّلاً"
+      },
+      "requirements": {
+        "en": "Jailbroken console with a compatible ELF loader",
+        "ar": "جهاز مكسور الحماية ومحمّل ELF متوافق"
+      },
+      "sourceUrl": "https://github.com/EchoStretch/kstuff-lite",
+      "reviewedAt": "2026-09-26",
+      "support": "code",
+      "assetPatterns": []
+    },
+    {
+      "id": "ftpsrv",
+      "name": "FTP Server",
+      "category": {
+        "en": "Network",
+        "ar": "الشبكة"
+      },
+      "description": {
+        "en": "PS5-side FTP service for browsing and moving homebrew files.",
+        "ar": "خدمة FTP على PS5 لاستعراض ملفات التطبيقات المنزلية ونقلها."
+      },
+      "repo": "ps5-payload-dev/ftpsrv",
+      "compatibility": {
+        "en": "Check the selected release for 13.60 support",
+        "ar": "راجع دعم 13.60 في الإصدار المحدد"
+      },
+      "requirements": {
+        "en": "Jailbroken console and working ELF loader",
+        "ar": "جهاز مكسور الحماية ومحمّل ELF عامل"
+      },
+      "sourceUrl": "https://github.com/ps5-payload-dev/ftpsrv",
+      "reviewedAt": "2026-09-26",
+      "support": "unverified",
+      "assetPatterns": []
+    },
+    {
+      "id": "websrv",
+      "name": "Web Server",
+      "category": {
+        "en": "Network",
+        "ar": "الشبكة"
+      },
+      "description": {
+        "en": "Serves a web interface and homebrew content from a jailbroken PS5.",
+        "ar": "خادم ويب يعرض واجهة وألعاباً منزلية على جهاز PS5 مكسور الحماية."
+      },
+      "repo": "ps5-payload-dev/websrv",
+      "compatibility": {
+        "en": "13.60 runtime unverified in this catalog",
+        "ar": "لم يؤكد هذا الفهرس التشغيل على 13.60"
+      },
+      "requirements": {
+        "en": "Jailbroken console and working ELF loader",
+        "ar": "جهاز مكسور الحماية ومحمّل ELF عامل"
+      },
+      "sourceUrl": "https://github.com/ps5-payload-dev/websrv",
+      "reviewedAt": "2026-09-26",
+      "support": "unverified",
+      "assetPatterns": []
+    },
+    {
+      "id": "app-dumper",
+      "name": "PS5 App Dumper",
+      "category": {
+        "en": "Utilities",
+        "ar": "الأدوات"
+      },
+      "description": {
+        "en": "Publisher's tool for working with apps on a console you control.",
+        "ar": "أداة الناشر للتعامل مع التطبيقات على جهاز تملكه."
+      },
+      "repo": "EchoStretch/ps5-app-dumper",
+      "compatibility": {
+        "en": "Publisher lists 13.60; verify release requirements",
+        "ar": "يذكر الناشر 13.60؛ راجع متطلبات الإصدار"
+      },
+      "requirements": {
+        "en": "Jailbroken console, ELF loader, and USB storage",
+        "ar": "جهاز مكسور الحماية ومحمّل ELF ووحدة تخزين USB"
+      },
+      "sourceUrl": "https://github.com/EchoStretch/ps5-app-dumper",
+      "reviewedAt": "2026-09-26",
+      "support": "publisher",
+      "assetPatterns": []
+    },
+    {
+      "id": "crispy-doom",
+      "name": "Crispy Doom PS5",
+      "category": {
+        "en": "Homebrew games",
+        "ar": "ألعاب منزلية"
+      },
+      "description": {
+        "en": "Native PS5 Doom source port with included shareware content. Other game data requires your own copy.",
+        "ar": "نسخة Doom منزلية لجهاز PS5 تتضمن محتوى تجريبياً. تحتاج بيانات إضافية إلى نسختك الخاصة."
+      },
+      "repo": "alex-free/crispy-doom-ps5",
+      "compatibility": {
+        "en": "Publisher tested on 12.70; 13.60 unverified",
+        "ar": "اختبر الناشر إصدار 12.70؛ دعم 13.60 غير مؤكد"
+      },
+      "requirements": {
+        "en": "WebSrv homebrew launcher and compatible console setup",
+        "ar": "مشغّل WebSrv وإعداد جهاز متوافق"
+      },
+      "sourceUrl": "https://github.com/alex-free/crispy-doom-ps5",
+      "reviewedAt": "2026-09-26",
+      "support": "unverified",
+      "assetPatterns": [],
+      "minimumFirmware": {
+        "testedVersions": [
+          "12.70"
+        ],
+        "sourceUrl": "https://github.com/alex-free/crispy-doom-ps5",
+        "reviewedAt": "2026-09-26"
+      }
+    },
+    {
+      "id": "shsrv",
+      "name": "Shell Server",
+      "category": {
+        "en": "Utilities",
+        "ar": "الأدوات"
+      },
+      "description": {
+        "en": "A telnet-like shell service for an already-jailbroken PS5.",
+        "ar": "خدمة طرفية على جهاز PS5 مكسور الحماية مسبقاً."
+      },
+      "repo": "ps5-payload-dev/shsrv",
+      "compatibility": {
+        "en": "13.60 runtime unverified",
+        "ar": "التشغيل على 13.60 غير مؤكد"
+      },
+      "requirements": {
+        "en": "A working ELF loader and an existing jailbreak",
+        "ar": "محمّل ELF عامل وجهاز مكسور الحماية"
+      },
+      "sourceUrl": "https://github.com/ps5-payload-dev/shsrv",
+      "reviewedAt": "2026-09-26",
+      "support": "unverified",
+      "assetPatterns": []
+    },
+    {
+      "id": "offact",
+      "name": "Offline Account Activation",
+      "category": {
+        "en": "Utilities",
+        "ar": "الأدوات"
+      },
+      "description": {
+        "en": "Publisher utility for offline account activation on a console you control.",
+        "ar": "أداة الناشر لتنشيط الحساب دون اتصال على جهاز تملكه."
+      },
+      "repo": "ps5-payload-dev/offact",
+      "compatibility": {
+        "en": "13.60 runtime unverified",
+        "ar": "التشغيل على 13.60 غير مؤكد"
+      },
+      "requirements": {
+        "en": "A compatible jailbreak; read the publisher instructions first",
+        "ar": "كسر حماية متوافق؛ اقرأ تعليمات الناشر أولاً"
+      },
+      "sourceUrl": "https://github.com/ps5-payload-dev/offact",
+      "reviewedAt": "2026-09-26",
+      "support": "unverified",
+      "assetPatterns": []
+    },
+    {
+      "id": "devilutionx",
+      "name": "DevilutionX",
+      "category": {
+        "en": "Homebrew games",
+        "ar": "ألعاب منزلية"
+      },
+      "description": {
+        "en": "PS5 port of the Diablo engine; original game data is required.",
+        "ar": "نسخة PS5 من محرك Diablo؛ تتطلب ملفات اللعبة الأصلية التي تملكها."
+      },
+      "repo": "ps5-payload-dev/websrv",
+      "compatibility": {
+        "en": "13.60 runtime unverified",
+        "ar": "التشغيل على 13.60 غير مؤكد"
+      },
+      "requirements": {
+        "en": "WebSrv launcher and your own game data",
+        "ar": "مشغّل WebSrv وملفات لعبتك الأصلية"
+      },
+      "sourceUrl": "https://github.com/ps5-payload-dev/websrv",
+      "reviewedAt": "2026-09-26",
+      "support": "unverified",
+      "assetPatterns": [
+        "DevilutionX.zip"
+      ]
+    },
+    {
+      "id": "eduke32",
+      "name": "EDuke32",
+      "category": {
+        "en": "Homebrew games",
+        "ar": "ألعاب منزلية"
+      },
+      "description": {
+        "en": "PS5 source port of Duke Nukem 3D; bring your own game data.",
+        "ar": "نسخة PS5 من محرك Duke Nukem 3D؛ تحتاج ملفات اللعبة الأصلية."
+      },
+      "repo": "ps5-payload-dev/websrv",
+      "compatibility": {
+        "en": "13.60 runtime unverified",
+        "ar": "التشغيل على 13.60 غير مؤكد"
+      },
+      "requirements": {
+        "en": "WebSrv launcher and your own game data",
+        "ar": "مشغّل WebSrv وملفات لعبتك الأصلية"
+      },
+      "sourceUrl": "https://github.com/ps5-payload-dev/websrv",
+      "reviewedAt": "2026-09-26",
+      "support": "unverified",
+      "assetPatterns": [
+        "EDuke32.zip"
+      ]
+    },
+    {
+      "id": "lakesnes",
+      "name": "LakeSnes",
+      "category": {
+        "en": "Homebrew games",
+        "ar": "ألعاب منزلية"
+      },
+      "description": {
+        "en": "SNES emulator package published with WebSrv; use only game files you may legally use.",
+        "ar": "حزمة محاكي SNES منشورة مع WebSrv؛ استخدم ملفات ألعاب يحق لك استخدامها فقط."
+      },
+      "repo": "ps5-payload-dev/websrv",
+      "compatibility": {
+        "en": "13.60 runtime unverified",
+        "ar": "التشغيل على 13.60 غير مؤكد"
+      },
+      "requirements": {
+        "en": "WebSrv launcher and your own permitted game files",
+        "ar": "مشغّل WebSrv وملفات ألعاب مسموح لك باستخدامها"
+      },
+      "sourceUrl": "https://github.com/ps5-payload-dev/websrv",
+      "reviewedAt": "2026-09-26",
+      "support": "unverified",
+      "assetPatterns": [
+        "LakeSnes.zip"
+      ]
+    },
+    {
+      "id": "scummvm",
+      "name": "ScummVM",
+      "category": {
+        "en": "Homebrew games",
+        "ar": "ألعاب منزلية"
+      },
+      "description": {
+        "en": "Adventure game engine package; original game data is required.",
+        "ar": "حزمة لمحرك ألعاب المغامرات؛ تحتاج ملفات اللعبة الأصلية."
+      },
+      "repo": "ps5-payload-dev/websrv",
+      "compatibility": {
+        "en": "13.60 runtime unverified",
+        "ar": "التشغيل على 13.60 غير مؤكد"
+      },
+      "requirements": {
+        "en": "WebSrv launcher and your own game data",
+        "ar": "مشغّل WebSrv وملفات لعبتك الأصلية"
+      },
+      "sourceUrl": "https://github.com/ps5-payload-dev/websrv",
+      "reviewedAt": "2026-09-26",
+      "support": "unverified",
+      "assetPatterns": [
+        "ScummVM.zip"
+      ]
+    }
+  ],
+  "schemaVersion": 4,
+  "storeGames": [
+    {
+      "title": "RESIDENT EVIL 7 biohazard",
+      "storeUrl": "https://store.playstation.com/en-sa/concept/220037",
+      "arabicScreen": true,
+      "arabicVoice": false,
+      "reviewedAt": "2026-09-27"
+    },
+    {
+      "title": "TUNIC",
+      "storeUrl": "https://store.playstation.com/en-sa/product/EP0403-PPSA03055_00-8262565741901804",
+      "arabicScreen": true,
+      "arabicVoice": null,
+      "reviewedAt": "2026-09-27"
+    },
+    {
+      "title": "Horizon Forbidden West",
+      "storeUrl": "https://store.playstation.com/en-sa/concept/10000886/",
+      "arabicScreen": true,
+      "arabicVoice": null,
+      "reviewedAt": "2026-09-27"
+    }
+  ],
+  "storeAccessReports": [],
+  "checkedThirdPartyPages": []
+}
